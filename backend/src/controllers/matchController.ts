@@ -53,7 +53,8 @@ const getUsersMatch = async (
 
     const match = await getMatch(user.id);
 
-    if (!match) throw new NotFoundError("This user does not have a match!");
+    if (!match)
+      throw new NotFoundError("This user does not have an upcoming match!");
 
     res.status(201).json(match);
   } catch (err: any) {
